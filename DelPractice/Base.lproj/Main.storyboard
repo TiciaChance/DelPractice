@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ReceivingVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ReceivingVC" customModule="DelPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,93 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLu-dX-Adj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="cjC-WY-rn6"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Receiving VC" id="L5e-DG-C9i">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tZ3-6M-Vjg">
+                                            <connections>
+                                                <segue destination="FGg-Hw-e2C" kind="presentation" identifier="showSendingVC" id="sp8-fk-0lf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the + button to add and send text " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osd-qB-KmB">
+                                <rect key="frame" x="0.0" y="175" width="375" height="355"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="osd-qB-KmB" secondAttribute="trailing" id="6FJ-hO-UpK"/>
+                            <constraint firstItem="XLu-dX-Adj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="B2k-qn-vsT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="osd-qB-KmB" secondAttribute="bottom" constant="137" id="PQu-8j-Rtz"/>
+                            <constraint firstItem="osd-qB-KmB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Swe-GI-ZqV"/>
+                            <constraint firstItem="XLu-dX-Adj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Twl-Bv-JR6"/>
+                            <constraint firstAttribute="trailing" secondItem="XLu-dX-Adj" secondAttribute="trailing" id="Ug3-nN-Xjo"/>
+                            <constraint firstItem="osd-qB-KmB" firstAttribute="top" secondItem="XLu-dX-Adj" secondAttribute="bottom" constant="131" id="nJT-CC-rsd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="receivingTxtLbl" destination="osd-qB-KmB" id="Fcj-Rg-vLG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+        </scene>
+        <!--SendingVC-->
+        <scene sceneID="6t1-kj-OdR">
+            <objects>
+                <viewController id="FGg-Hw-e2C" customClass="SendingVC" customModule="DelPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Gb-i7-NeU"/>
+                        <viewControllerLayoutGuide type="bottom" id="dzk-7I-qXU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="59f-aK-Yfo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add in some text..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UvT-hA-pdN">
+                                <rect key="frame" x="16" y="72" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUt-nu-wVq">
+                                <rect key="frame" x="164" y="340" width="46" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="SEND"/>
+                                <connections>
+                                    <action selector="sendButtonTapped:" destination="FGg-Hw-e2C" eventType="touchUpInside" id="mqN-Bi-ixS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UvT-hA-pdN" firstAttribute="trailing" secondItem="59f-aK-Yfo" secondAttribute="trailingMargin" id="FFf-ve-vSy"/>
+                            <constraint firstItem="UvT-hA-pdN" firstAttribute="top" secondItem="7Gb-i7-NeU" secondAttribute="bottom" constant="52" id="OeF-20-VDJ"/>
+                            <constraint firstItem="UvT-hA-pdN" firstAttribute="leading" secondItem="59f-aK-Yfo" secondAttribute="leadingMargin" id="eX8-eu-uud"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oUt-nu-wVq" secondAttribute="trailing" constant="149" id="hJ9-ao-Xkm"/>
+                            <constraint firstItem="oUt-nu-wVq" firstAttribute="top" secondItem="UvT-hA-pdN" secondAttribute="bottom" constant="238" id="kRd-Lx-nka"/>
+                            <constraint firstItem="oUt-nu-wVq" firstAttribute="centerX" secondItem="59f-aK-Yfo" secondAttribute="centerX" id="y1s-CD-chy"/>
+                            <constraint firstItem="dzk-7I-qXU" firstAttribute="top" secondItem="oUt-nu-wVq" secondAttribute="bottom" constant="297" id="yTQ-OQ-ej4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="infoEntryTextfield" destination="UvT-hA-pdN" id="fO2-xy-UbE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0vp-93-les" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="36.431784107946029"/>
         </scene>
     </scenes>
 </document>
